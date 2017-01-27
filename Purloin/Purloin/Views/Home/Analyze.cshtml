@@ -1,0 +1,15 @@
+﻿@model List<Google.Apis.Gmail.v1.Data.Message>
+@{
+    ViewBag.Title = "Analyze";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Analyze</h2>
+@foreach (var item in Model)
+{
+    foreach (var header in item.Payload.Headers)
+    {
+        <p>@header.Name</p>
+        <p>@header.Value</p>
+    }
+}
